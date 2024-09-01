@@ -21,11 +21,13 @@ import Colorpicker from '../components/Colorpicker'
 import Todo from '../components/Todo'
 import MyEffect from '../notes/MyEffect'
 import DataFetching from '../components/DataFetching'
+import MealDB from '../components/MealDB'
+import RandomUser from '../components/RandomUser'
 
 const index = () => {
   return (
     <View>
-      <DataFetching />
+      <RandomUser />
     </View>
   )
 }
