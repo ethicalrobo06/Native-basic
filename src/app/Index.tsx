@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import React from 'react'
 import InternalStyle from '../notes/InternalStyle'
 import ExternalStyle from '../notes/ExternalStyle'
@@ -23,11 +23,24 @@ import MyEffect from '../notes/MyEffect'
 import DataFetching from '../components/DataFetching'
 import MealDB from '../components/MealDB'
 import RandomUser from '../components/RandomUser'
+import Counter from '../notes/Reducer'
+import TodoList from '../components/TodoList'
+import NativeWind from '../notes/NativeWind'
+import { Link } from 'expo-router'
+import { useCounterStore } from '../store/store'
 
 const index = () => {
+  const count = useCounterStore((state) => state.count)
+  const increment = useCounterStore((state) => state.increment)
+  const decrement = useCounterStore((state) => state.decrement)
   return (
     <View>
-      <RandomUser />
+      <Text style={{ fontSize: 24 }}>Count: {count}</Text>
+      <Button title="Increment" onPress={increment} />
+      <Button title="Decrement" onPress={decrement} />
+      <Link href="/Home">Home Screen</Link>
+      <Link href="/About">About Screen</Link>
+      <Link href="/Contact">Contact Screen</Link>
     </View>
   )
 }
